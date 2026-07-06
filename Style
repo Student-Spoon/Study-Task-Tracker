@@ -1,0 +1,372 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   }
+   /* ===== BASE STYLES ===== */
+   body {
+    font-family: Arial, sans-serif;
+    background: #F7F3ED;
+    color: #253024;
+    line-height: 1.6;
+   }
+   /* ===== HEADER ===== */
+   header {
+    background: #FFFFFF;
+    padding: 20px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #253024;
+    text-decoration: none;
+    cursor: pointer;
+}
+   nav {
+    display: flex;
+    gap: 30px;
+   }
+   nav a {
+    cursor: pointer;
+    font-weight: bold;
+    color: #253024;
+    text-decoration: none;
+    transition: 0.3s;
+   }
+   nav a:hover {
+    color: #7FA36B;
+   }
+   /* Hamburger menu button (hidden on desktop) */
+   .menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #253024;
+   }
+   /* ===== PAGE SECTIONS ===== */
+   .page {
+    display: none;
+    padding: 60px 6%;
+    min-height: 80vh;
+   }
+   .page.active {
+    display: block;
+   }
+   /* ===== HEADINGS ===== */
+   h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+   }
+   h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+   }
+   h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+   }
+   .centered {
+    text-align: center;
+   }
+   .subtitle {
+    font-size: 18px;
+    color: #666666;
+    margin-bottom: 30px;
+   }
+   /* ===== HOME PAGE HERO ===== */
+   .hero {
+    text-align: center;
+    margin-bottom: 60px;
+   }
+   .hero h1 {
+    margin-bottom: 20px;
+   }
+   .hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+   }
+   /* ===== BUTTONS ===== */
+   button {
+    background: #7FA36B;
+    color: #FFFFFF;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s;
+   }
+   button:hover {
+    transform: translateY(-2px);
+    background: #5C7E4D;
+   }
+   button.secondary {
+    background: #F4A261;
+   }
+   button.secondary:hover {
+    background: #d88a4a;
+   }
+   button.danger {
+    background: #E74C3C;
+   }
+   button.danger:hover {
+    background: #c0392b;
+   }
+   /* ===== STEPS GRID (Home Page) ===== */
+   .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+   }
+   .step-card {
+    background: #FFFFFF;
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+   }
+   .step-card:hover {
+    transform: translateY(-5px);
+   }
+   .step-emoji {
+    font-size: 40px;
+    margin-bottom: 15px;
+   }
+   /* ===== FORM ===== */
+   .task-form {
+    background: #FFFFFF;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+   }
+   .task-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    margin-top: 15px;
+    color: #253024;
+   }
+   .task-form input,
+   .task-form select,
+   .task-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #DDDDDD;
+    border-radius: 8px;
+    background: #F9F9F9;
+    font-size: 14px;
+    font-family: inherit;
+    margin-bottom: 5px;
+   }
+   .task-form textarea {
+    resize: vertical;
+    min-height: 100px;
+   }
+   .task-form button {
+    width: 100%;
+    margin-top: 25px;
+   }
+   .message {
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+    color: #27AE60;
+   }
+   .message.error {
+    color: #E74C3C;
+   }
+   /* ===== SAVED TASKS PAGE ===== */
+   .saved-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 10px;
+   }
+   .task-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+   }
+.task-card {
+    background:#FFFFFF;
+    padding:25px;
+    border-radius:16px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.08);
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+   .priority-badge {
+    display: inline-block;
+    padding: 5px 14px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    align-self: flex-start;
+   }
+   .priority-high {
+    background: #E74C3C;
+   }
+   .priority-medium {
+    background: #F39C12;
+   }
+   .priority-low {
+    background: #27AE60;
+   }
+.task-card h3 {
+    margin: 10px 0 8px;
+    color: #253024;
+}
+ .task-card p {
+    color: #666666;
+    font-size: 14px;
+    margin: 6px 0;
+    line-height: 1.5;
+}
+   .task-card .notes {
+    color: #253024;
+    margin-top: 10px;
+    margin-bottom: 20px;
+   }
+   .task-card .delete-btn {
+    background: #E74C3C;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 8px;
+    align-self: flex-start;
+    margin-top: auto;
+   }
+   .task-card .delete-btn:hover {
+    background: #c0392b;
+   }
+   .empty-message {
+    text-align: center;
+    font-size: 18px;
+    color: #666666;
+    padding: 40px;
+    background: #FFFFFF;
+    border-radius: 16px;
+    grid-column: 1 / -1;
+   }
+   /* ===== FOOTER ===== */
+   footer {
+    background: #253024;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+   }
+   /* ===== RESPONSIVE — MOBILE ===== */
+   @media (max-width: 768px) {
+    header {
+      padding: 15px 5%;
+      position: relative;
+    }
+    .logo {
+      font-size: 18px;
+    }
+    /* Show hamburger button on mobile */
+    .menu-btn {
+      display: block;
+    }
+    /* Hide nav by default on mobile */
+    nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: #FFFFFF;
+      flex-direction: column;
+      gap: 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    /* Show nav when toggled */
+    nav.show {
+      display: flex;
+    }
+    nav a {
+      padding: 15px 20px;
+      border-bottom: 1px solid #EEEEEE;
+    }
+    .page {
+      padding: 40px 5%;
+    }
+    h1 {
+      font-size: 28px;
+    }
+    h2 {
+      font-size: 24px;
+    }
+    .subtitle {
+      font-size: 14px;
+    }
+    .hero-buttons {
+      flex-direction: column;
+    }
+    .hero-buttons button {
+      width: 100%;
+    }
+    /* Stack steps vertically on mobile */
+    .steps-grid {
+      grid-template-columns: 1fr;
+    }
+    /* Stack task cards vertically on mobile */
+    .task-grid {
+      grid-template-columns: 1fr;
+    }
+    .task-form {
+      padding: 25px;
+    }
+    .saved-header {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .saved-header button {
+      width: 100%;
+    }
+.task-form input,
+.task-form select,
+.task-form textarea{
+    border:1px solid #CCCCCC;
+    background:#FFFFFF;
+}
+.task-card{
+    width:100%;
+    padding:20px;
+}
+
+.priority-badge{
+    font-size:12px;
+    padding:5px 12px;
+}
+
+.task-card .delete-btn{
+    width:100%;
+    align-self:stretch;
+    margin-top:20px;
+}
+   }
