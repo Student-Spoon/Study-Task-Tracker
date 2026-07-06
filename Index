@@ -1,1 +1,99 @@
-uamaa
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Task Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- ===== HEADER WITH NAVIGATION ===== -->
+<header>
+<a class="logo" href="#" onclick="showPage('home')">
+    Study Task Tracker
+</a>
+<!-- Hamburger button for mobile -->
+<button class="menu-btn" onclick="toggleMenu()" aria-label="Open navigation menu">☰</button>
+<!-- Navigation links -->
+<nav id="navMenu">
+<a onclick="showPage('home')">Home</a>
+<a onclick="showPage('addTask')">Add Task</a>
+<a onclick="showPage('savedTasks')">Saved Tasks</a>
+</nav>
+</header>
+<main>
+<!-- ===== HOME PAGE ===== -->
+<section id="home" class="page active">
+<div class="hero">
+<h1>Stay on Top of Your Studies</h1>
+<p class="subtitle">
+
+     A simple way to track your homework, coursework, and revision activities — all in one place.
+</p>
+<div class="hero-buttons">
+<button onclick="showPage('addTask')">+ Add a Task</button>
+<button class="secondary" onclick="showPage('savedTasks')">View Saved Tasks</button>
+</div>
+</div>
+<h2 class="centered">How It Works</h2>
+<div class="steps-grid">
+<div class="step-card">
+<div class="step-emoji">1</div>
+<h3>Add Your Task</h3>
+<p>Fill in the simple form with your task details.</p>
+</div>
+<div class="step-card">
+<div class="step-emoji">2️</div>
+<h3>Save It</h3>
+<p>Your task is saved automatically to your browser.</p>
+</div>
+<div class="step-card">
+<div class="step-emoji">3️</div>
+<h3>Track It</h3>
+<p>View your saved tasks anytime, even after refreshing.</p>
+</div>
+</div>
+</section>
+<!-- ===== ADD TASK PAGE ===== -->
+<section id="addTask" class="page">
+<h1 class="centered">Add a New Task</h1>
+<p class="subtitle centered">Fill in the form below to save a new study task.</p>
+<form class="task-form" onsubmit="saveTask(event)">
+<label for="taskTitle">Task Title</label>
+<input type="text" id="taskTitle" placeholder="e.g. Maths Homework">
+<label for="taskSubject">Subject / Course</label>
+<input type="text" id="taskSubject" placeholder="e.g. Mathematics">
+<label for="taskDate">Due Date</label>
+<input type="date" id="taskDate">
+<label for="taskPriority">Priority</label>
+<select id="taskPriority">
+<option value="">Select priority</option>
+<option value="High">High</option>
+<option value="Medium">Medium</option>
+<option value="Low">Low</option>
+</select>
+<label for="taskNotes">Notes</label>
+<textarea id="taskNotes" placeholder="Add any extra details about this task..."></textarea>
+<button type="submit">Save Task</button>
+<p id="saveMessage" class="message" aria-live="polite"></p>
+</form>
+</section>
+<!-- ===== SAVED TASKS PAGE ===== -->
+<section id="savedTasks" class="page">
+<div class="saved-header">
+<h1>Saved Tasks</h1>
+<button class="danger" onclick="clearAllTasks()"> Clear All Tasks</button>
+</div>
+<p class="subtitle">All your saved study tasks are listed below.</p>
+<div id="taskList" class="task-grid">
+<!-- Tasks will be loaded here by JavaScript -->
+</div>
+</section>
+</main>
+<!-- ===== FOOTER ===== -->
+<footer>
+<p>© 2026 Study Task Tracker — Helping Students Stay Organised</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
